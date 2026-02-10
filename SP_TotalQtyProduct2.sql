@@ -68,7 +68,7 @@ inner Join
   (SELECT     Tbl_frm345.Col_4685013093536963607 AS Product, SUM(CAST(Tbl_frm338.Col_5219175971637271591 AS float)) AS Qtyplanned,
  Tbl_frm345.frm345Id AS productid
  ,(case when [dbo].[getmotamam] (frm345Id,@fromdate,@Todate) < 0 then SUM(CAST(Tbl_frm338.Col_5219175971637271591 AS float))+(-[dbo].[getmotamam] (frm345Id,@fromdate,@Todate)) else
- SUM(CAST(Tbl_frm338.Col_5219175971637271591 AS float))-[dbo].[getmotamam] (frm345Id,@fromdate,@Todate) End ) as [qtyMotamam]
+ SUM(CAST(Tbl_frm338.Col_5219175971637271591 AS float))-[dbo].[getmotamam] (frm345Id,@fromdate,@Todate) End ) as [qtyMotamam]   -- محاسبه مقدار متمم
 FROM         Tbl_frm338 INNER JOIN
                       Tbl_frm345 ON Tbl_frm338.Col_5454345176296650163 = Tbl_frm345.frm345Id INNER JOIN
                       Tbl_frm337 ON Tbl_frm338.Col_4816520823772850953 = Tbl_frm337.Col_4934908701495379211 LEFT OUTER JOIN
